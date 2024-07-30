@@ -18,7 +18,7 @@ const Home = () => {
   const [complaintcount, setComplaintcount] = useState<number>(0)
 
   const init = useCallback(async () => {
-    const { data } = await Axios.post("http://165.73.253.252:908/api/v1/test/getdata")
+    const { data } = await Axios.post("http://localhost:908/api/v1/test/getdata")
     const rdata = data
     console.log(rdata)
     if (rdata.status) {
