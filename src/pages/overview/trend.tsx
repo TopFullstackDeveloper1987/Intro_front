@@ -43,7 +43,7 @@ const Trend = ({ trendobj }: { trendobj: any }) => {
             },
             y: {
                 min: 0,
-                max: 25000,
+                max: 12500,
                 ticks: {
                     stepSize: 100,
                     color: labelColor
