@@ -8,8 +8,12 @@ import { useTheme } from '@mui/material/styles'
 
 // ** Third Party Imports
 import { ApexOptions } from 'apexcharts'
+import { useRef } from 'react'
 
 const Trip = ({ trip }: { trip: any }) => {
+
+    const chartRef = useRef(null);
+
     // ** Hook
     const theme = useTheme()
 
@@ -102,13 +106,31 @@ const Trip = ({ trip }: { trip: any }) => {
                     }
                 }
             }
-        ]
+        ],
+        chart: {
+            toolbar: {
+                show: true,
+                export: {
+                    svg: {
+                        filename: 'chart-svg',
+                        // width: 800,
+                        // height: 600
+                    },
+                    png: {
+                        filename: 'chart-png',
+                        // width: 800,
+                        // height: 600
+                    }
+                }
+
+            }
+        }
     }
-    
+
     return (
         <Card >
             <Box >
-                <ReactApexcharts type='donut' height={400} options={options} series={trip.data} />
+                <ReactApexcharts ref={chartRef} type='donut' height={400} toolbar={toolbar} options={options} series={trip.data} />
             </Box>
         </Card>
     )

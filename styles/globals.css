@@ -15,10 +15,25 @@ code {
   color: #d400ff;
   border-radius: 0.1335rem;
 }
+
 code:not([class*='language-']):before,
 code:not([class*='language-']):after {
   content: '`';
 }
+
 code[class*='language-'] {
   padding: 0;
+}
+
+.apexcharts-menu {
+  background: transparent !important;
+
+}
+
+.apexcharts-menu>.apexcharts-menu-item:hover {
+  background-color: 0px 2px 6px rgba(234, 84, 85, 0.48) !important;
+}
+
+.apexcharts-menu-icon>svg {
+  fill: #EA5455 !important;
 }
