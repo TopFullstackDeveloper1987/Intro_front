@@ -49,7 +49,8 @@ const AclGuard = (props: AclGuardProps) => {
   if (!ability) {
     ability = buildAbilityFor("admin", aclAbilities.subject)
     if (router.route === '/') {
-      return <Spinner />
+      // return <Spinner />
+      router.replace("/overview")
     }
   }
 
@@ -67,7 +68,8 @@ const AclGuard = (props: AclGuardProps) => {
   // Check the access of current user and render pages
   if (ability && ability.can(aclAbilities.action, aclAbilities.subject)) {
     if (router.route === '/') {
-      return <Spinner />
+      // return <Spinner />
+      router.replace("/overview")
     }
 
     return <AbilityContext.Provider value={ability}>{children}</AbilityContext.Provider>
